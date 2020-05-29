@@ -18,7 +18,7 @@ PROJECT="config"
 
 function addRepos {
   sudo apt-add-repository non-free
- }
+}
 
 function pkgUpdates {
   sudo apt update
@@ -234,6 +234,8 @@ function setupTerminal {
 
 
 ## Enabling the NON-Free repository and installing latest updates
+addRepos
+
 pkgUpdates
 
 ## Installing Extra Packages
