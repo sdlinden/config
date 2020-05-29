@@ -102,6 +102,20 @@ function getGitConfigFIles {
   git clone https://github.com/sdlinden/${PROJECT}.git
 }
 
+function getThemes {
+  ## Install the Yaru-Colors theme
+  cd ${PROJDIR}
+  git clone https://github.com/Jannomag/Yaru-Colors.git
+
+  cd ${PROJDIR}/Yaru-Colors
+  cp -rp Wallpapers/* ${BGDIR}
+  cp -rp Icons/* ${ICONDIR}/
+  cp -rp Themes/* ${THEMEDIR}
+
+  ## Install Cloudy-Light-Grey theme
+  cd ${THEMDIR}
+  tar xvf ${WORKDIR}/Cloudy-Light-Grey.tar.xz
+
 ########
 # MAIN #
 ########
@@ -122,7 +136,7 @@ pkgInstalls
 setupGit
 
 ## Getting the configuration files from github.com
-sh ./getGitConfigFiles.sh
+getGitConfigFiles
 
 ## Installing GNOME Extensions
 pkgExtInstalls
@@ -134,7 +148,7 @@ pkgSynologyDrive
 pkgRemoves
 
 ## Getting themes
-sh ./getThemes.sh
+getThemes
 
 ## Setup the GNOME Extensions
 sh ./setupGnomeExt.sh
