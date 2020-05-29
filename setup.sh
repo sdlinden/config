@@ -13,13 +13,13 @@
 #
 # Install via wget
 # ================
-# $ sh -c "$(wget --no-check-certificate https://raw.githubusercontent.com/sdlinden/config/master/setup.sh -o -)"
+# $ bash -c "$(wget --no-check-certificate https://raw.githubusercontent.com/sdlinden/config/master/setup.sh -O -)"
 #
 #
 # Install via curl
 # ================
 #
-# $ sh -c "$(curl -kL https://raw.githubusercontent.com/sdlinden/config/master/setup.sh)"
+# $ bash -c "$(curl -fsSkL https://raw.githubusercontent.com/sdlinden/config/master/setup.sh)"
 #
 #
 # These commands bypass the certificate error.  You should inspect any
