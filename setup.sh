@@ -130,6 +130,9 @@ setupGnomeExt () {
 
   # Drive Menu
   gnome-shell-extension-tool -e drive-menu@gnome-shell-extensions.gcampax.github.com
+
+  # Media Player Indicator
+  gnome-shell-extension-tool -e mediaplayer@patapon.info
   
   # Open Weather
   gnome-shell-extension-tool -e openweather-extension@jenslody.de
@@ -212,6 +215,11 @@ setupTerminal () {
   cp ${WORKDIR}/.zshrc ~/
 }
 
+services () {
+  numlockx on
+  sudo tlp start
+}
+
 ########
 # MAIN #
 ########
@@ -244,6 +252,9 @@ pkgSynologyDrive
 
 ## Removing unnecessary packages
 pkgRemoves
+
+## Starting services
+services
 
 ## Getting themes
 getThemes
