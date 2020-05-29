@@ -6,7 +6,9 @@
 # Install via git clone
 # =====================
 #
-# $ git clone ${PROJECT}
+# $ git clone https://github.com/sdlinden/config.git
+# $ cd config
+# $ ./setup.sh
 #
 #
 # Install via wget
