@@ -62,6 +62,21 @@ pkgSynologyDrive () {
   sudo apt -y install ${DOWNLOADS}/synology-drive-client-11078.x86_64.deb
 }
 
+pkgClusterSSH () {
+  sudo apt -y install clusterssh
+  cssh -d &>/dev/null
+  cat << EOF >> ${HOME}/.clusterssh/config
+auto_close=2
+terminal_args=-fa "DejaVu Sans Mono" -fs 12 -bw 0 -bg Grey30 -fg Grey93
+terminal_reserve_bottom=60
+terminal_size=158x30
+EOF
+}
+
+pkgPidgin () {
+  sudo apt-y install pidgin pidgin-sipe
+}
+
 setupGit () {
   cd ${DOWNLOADS}
   wget https://cdist2.perforce.com/perforce/r20.1/bin.linux26x86_64/p4v.tgz
@@ -248,7 +263,16 @@ getGitConfigFiles
 ## Installing GNOME Extensions
 pkgExtInstalls
 
+## Installing ClusterSSH
+## Comment this out if you do not want it installed
+pkgClusterSSH
+
+## Installing Pidgin
+## Comment this out if you do not want it installed
+pkgPidgin
+
 ## Installing the Synology Drive Client
+## Comment this out if you do not want it installed
 pkgSynologyDrive
 
 ## Removing unnecessary packages
