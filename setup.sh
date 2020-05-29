@@ -6,8 +6,8 @@
 
 PROJECT="config"
 PATH=/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/bin:/usr/local/sbin
-DOWNLOADS="${HOME}Downloads"
-PROJDIR="${HOME}projects"
+DOWNLOADS="${HOME}/Downloads"
+PROJDIR="${HOME}/projects"
 WORKDIR="${PROJDIR}/config"
 BGDIR="${HOME}/.backgrounds"
 ICONDIR="${HOME}/.icons"
@@ -213,9 +213,9 @@ setupTerminal () {
 ########
 
 [[ ! -d ${WORKDIR} ]] && mkdir -p ${WORKDIR}
-#[[ ! -d ${BGDIR} ]] && mkdir -p ${BGDIR}
-#[[ ! -d ${ICONDIR} ]] && mkdir -p ${ICONDIR}
-#[[ ! -d ${THEMEDIR} ]] && mkdir -p ${THEMEDIR}
+[[ ! -d ${BGDIR} ]] && mkdir -p ${BGDIR}
+[[ ! -d ${ICONDIR} ]] && mkdir -p ${ICONDIR}
+[[ ! -d ${THEMEDIR} ]] && mkdir -p ${THEMEDIR}
 
 
 ## Enabling the NON-Free repository and installing latest updates
