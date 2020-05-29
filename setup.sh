@@ -30,7 +30,7 @@ pkgUpdates () {
 }
 
 pkgInstalls () {
-  sudo apt -y install chromium curl gimp git gnome-gmail gnome-tweaks gnucash libaio1 neofetch htop nmon numlockx powertop rsync solaar tlp tlp-rdw vim vlc wget zsh 
+  sudo apt -y install chromium curl gimp git gnome-gmail gnome-tweaks gnucash libaio1 neofetch htop nmon numlockx powertop remmina rsync solaar tlp tlp-rdw vim vlc wget zsh 
 }
 
 pkgExtInstalls () {
@@ -185,7 +185,7 @@ setupDesktop () {
   gsettings set org.gnome.desktop.wm.preferences button-layout 'appmenu:minimize,maximize,close'
   gsettings set org.gnome.desktop.wm.preferences theme 'Adwaita'
 
-  gsettings set org.gnome.shell favorite-apps "['org.gnome.Screenshot.desktop', 'chromium.desktop', 'gnome-gmail.desktop', rhythmbox.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop', 'org.gnome.Terminal.desktop', 'org.gnome.tweaks.desktop', 'org.remmina.Remmina.desktop', 'gnome-control-center.desktop']"
+  gsettings set org.gnome.shell favorite-apps "['org.gnome.Screenshot.desktop', 'chromium.desktop', 'gnome-gmail.desktop', 'org.gnome.Terminal.desktop', 'org.remmina.Remmina.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop']"
 
   #gsettings set org.gnome.GWeather default-location '','KLRJ',nothing
   #gsettings set org.gnome.GWeather pressure-unit 'inch-hg'
