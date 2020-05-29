@@ -4,17 +4,17 @@
 # VARIABLES #
 #############
 
-PATH=/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/bin:/usr/local/sbin
-DOWNLOADS="~/Downloads"
-PROJDIR="~/projects"
-WORKDIR="${PROJDIR}/config"
-#BGDIR="~/.backgrounds"
-#ICONDIR="~/.icons"
-#THEMEDIR="~/.themes"
-BGDIR="/usr/share/backgrounds"
-ICONDIR="/usr/share/icons"
-THEMEDIR="/usr/share/themes"
 PROJECT="config"
+PATH=/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/bin:/usr/local/sbin
+DOWNLOADS="${HOME}Downloads"
+PROJDIR="${HOME}projects"
+WORKDIR="${PROJDIR}/config"
+BGDIR="${HOME}/.backgrounds"
+ICONDIR="${HOME}/.icons"
+THEMEDIR="${HOME}/.themes"
+#BGDIR="/usr/share/backgrounds"
+#ICONDIR="/usr/share/icons"
+#THEMEDIR="/usr/share/themes"
 
 #############
 # FUNCTIONS #
@@ -93,13 +93,13 @@ getThemes () {
   git clone https://github.com/Jannomag/Yaru-Colors.git
 
   cd ${PROJDIR}/Yaru-Colors
-  sudo cp -rp Wallpapers/* ${BGDIR}
-  sudo cp -rp Icons/* ${ICONDIR}/
-  sudo cp -rp Themes/* ${THEMEDIR}
+  cp -rp Wallpapers/* ${BGDIR}
+  cp -rp Icons/* ${ICONDIR}/
+  cp -rp Themes/* ${THEMEDIR}
 
   ## Install Cloudy-Light-Grey theme
   cd ${THEMDIR}
-  sudo tar xvf ${WORKDIR}/Cloudy-Light-Grey.tar.xz
+  tar xvf ${WORKDIR}/Cloudy-Light-Grey.tar.xz
 }
 
 setupGnomeExt () {
