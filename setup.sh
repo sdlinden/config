@@ -221,6 +221,7 @@ function setupTerminal {
   chsh -s "`which zsh`"
 
   cp ${WORKDIR}/.zshrc ~/
+}
 
 ########
 # MAIN #
