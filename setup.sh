@@ -57,6 +57,17 @@ function pkgExtInstalls {
 	  gnome-shell-extension-weather
 }
 
+function pkgRemoves {
+  sudo apt -y remove evolution \
+	  mlterm \
+	  mlterm-common \
+	  mlterm-tools \
+	  thunderbird \
+	  xiterm+thai
+
+  sudo apt -y autoremove
+}
+
 ########
 # MAIN #
 ########
