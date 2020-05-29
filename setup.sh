@@ -108,6 +108,12 @@ getThemes () {
 }
 
 setupGnomeExt () {
+  set -x
+  sleep 2
+  # Desktop Icons
+  gnome-shell-extension-tool -e desktop-icons@csoriano
+  set +x
+
   # Caffeine
   gnome-shell-extension-tool -e caffeine@patapon.info
 
@@ -125,15 +131,9 @@ setupGnomeExt () {
   gsettings set org.gnome.shell.extensions.dash-to-dock show-apps-at-top 'true'
   gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode 'FIXED'
 
-  sleep 2
-  set -x
-  # Desktop Icons
-  gnome-shell-extension-tool -e desktop-icons@csoriano
-  set +x
-
   # Drive Menu
   gnome-shell-extension-tool -e drive-menu@gnome-shell-extensions.gcampax.github.com
-
+  
   # Open Weather
   gnome-shell-extension-tool -e openweather-extension@jenslody.de
   gsettings set org.gnome.shell.extensions.openweather city '42.7944184,-96.1653015>Le Mars, Plymouth County, Iowa, 51031, United States of America >-1'
