@@ -267,7 +267,7 @@ services () {
 # MAIN #
 ########
 
-[ ! -d ${WORKDIR} ] && mkdir -p ${WORKDIR}
+[ ! -d ${PROJDIR} ] && mkdir -p ${PROJDIR}
 [ ! -d ${BGDIR} ] && mkdir -p ${BGDIR}
 [ ! -d ${ICONDIR} ] && mkdir -p ${ICONDIR}
 [ ! -d ${THEMEDIR} ] && mkdir -p ${THEMEDIR}
