@@ -82,9 +82,12 @@ setupGit () {
   git config --global --list
 }
 
-getGitConfigFIles () {
-  cd ${PROJDIR}
-  git clone https://github.com/sdlinden/${PROJECT}.git
+getGitConfigFiles () {
+  if [[ ! -d ${WORKDIR} ]]
+  then
+    cd ${PROJDIR}
+    git clone https://github.com/sdlinden/${PROJECT}.git
+  fi
 }
 
 getThemes () {
