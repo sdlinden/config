@@ -92,14 +92,11 @@ pkgSynologyDrive () {
 pkgClusterSSH () {
   sudo apt -y install clusterssh
   cssh -d &>/dev/null
-  echo "auto_close=2" >> ${HOME}/.clusterssh/config
-  echo "terminal_args=-fa "DejaVu Sans Mono" -fs 12 -bw 0 -bg Grey30 -fg Grey93" >> ${HOME}/.clusterssh/config
-  echo "terminal_reserve_bottom=60" >> ${HOME}/.clusterssh/config
-  echo "terminal_size=158x30" >> ${HOME}/.clusterssh/config
+  cp -r ${WORKDIR}/.clusterssh ${HOME}
 }
 
 pkgPidgin () {
-  sudo apt-y install pidgin pidgin-sipe
+  sudo apt -y install pidgin pidgin-sipe
 }
 
 setupGit () {
