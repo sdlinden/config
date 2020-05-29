@@ -34,7 +34,7 @@ pkgInstalls () {
 	  curl \
 	  gimp \
 	  git \ 
-	  gnome-gmail
+	  gnome-gmail \
 	  gnome-tweaks \
 	  gnucash \
 	  libaio1 \
