@@ -59,7 +59,7 @@ pkgSynologyDrive () {
   cd ${DOWNLOADS}
   wget https://global.download.synology.com/download/Tools/SynologyDriveClient/2.0.2-11078/Ubuntu/Installer/x86_64/synology-drive-client-11078.x86_64.deb
 
-  sudo apt -y install ${DOWNLOADS}synology-drive-client-11078.x86_64.deb
+  sudo apt -y install ${DOWNLOADS}/synology-drive-client-11078.x86_64.deb
 }
 
 setupGit () {
@@ -101,8 +101,10 @@ getThemes () {
   cp -rp Themes/* ${THEMEDIR}
 
   ## Install Cloudy-Light-Grey theme
-  cd ${THEMDIR}
-  tar xvf ${WORKDIR}/Cloudy-Light-Grey.tar.xz
+  cd ${DOWNLOADS}
+  wget https://dllb2.pling.com/api/files/download/j/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE1ODk5OTMyODYiLCJ1IjpudWxsLCJsdCI6ImRvd25sb2FkIiwicyI6ImUzODI2NGZlNjRjMTVjYWNmOWU3NDY1NTM2ODEzZDk2MWYyZTFhZmFjZTY5YzQzMGU4YzZlODdjYzhmZmMwMWM5M2EzMDgwYTQzYTI4MmY0OGE1M2RkNWM1NWFlMTBmMzZmODBlNGY2YTA2NGFhMTE1NmJhYWU1NTk3NWRhYjk2IiwidCI6MTU5MDc2NTM1MCwic3RmcCI6IjAwNzMxNjEyMGM2MjE3ZWQzMGJiZWZhMDM3ZGMwMTk0Iiwic3RpcCI6IjEwNC4xOTIuNTguMTIwIn0.Ou0aLfb_91mTpwA27Wrq_FFKiEOv9tCxK47l9LYfUCA/Cloudy-Light-Grey.tar.xz
+  cd ${THEMEDIR}
+  tar xvf ${DOWNLOADS}/Cloudy-Light-Grey.tar.xz
 }
 
 setupGnomeExt () {
@@ -161,7 +163,7 @@ setupGnomeExt () {
 
 setupDesktop () {
   ## Setting the desktop background
-  sudo cp ${PROJDIR}/WaterDropsOnGrey.jpeg ${BGDIR}
+  cp ${WORKDIR}/WaterDropsOnGrey.jpeg ${BGDIR}
 
   gsettings set org.gnome.desktop.background picture-uri file://${BGDIR}/WaterDropsOnGrey.jpeg
   gsettings set org.gnome.desktop.background picture-options 'zoom'
