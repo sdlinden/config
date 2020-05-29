@@ -3,22 +3,22 @@
 ################################################################################
 # Installation
 #
-# You can clone the git repo and run the setup.sh
+# Install via git clone
+# =====================
 #
-#   git clone ${PROJECT}
+# $ git clone ${PROJECT}
 #
-# or
 #
-# You can download the setup.sh with wget and rune the setup.sh file.
+# Install via wget
+# ================
+# $ sh -c "$(wget --no-check-certificate https://raw.githubusercontent.com/sdlinden/config/master/setup.sh -o -)"
 #
-#   wget --no-check-certificate https://raw.githubusercontent.com/sdlinden/config/master/setup.sh
-#   ./setup.sh
 #
-# or
+# Install via curl
+# ================
 #
-# You can run the setup.sh directly from githup with curl.
+# $ sh -c $(curl -kL https://raw.githubusercontent.com/sdlinden/config/master/setup.sh)"
 #
-#   curl -kL https://raw.githubusercontent.com/sdlinden/config/master/setup.sh
 #
 # These commands bypass the certificate error.  You should inspect any
 # shell script you download from the internet before running.
