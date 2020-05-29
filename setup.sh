@@ -4,6 +4,7 @@
 # VARIABLES #
 #############
 
+DOWNLOADS=~/Downloads
 PROJDIR=~/projects
 WORKDIR=${PROJDIR}/config
 BGDIR=~/.backgrounds
@@ -68,6 +69,13 @@ function pkgRemoves {
   sudo apt -y autoremove
 }
 
+function pkgSynologyDrive {
+  cd ${DOWNLOADS}
+  wget https://global.download.synology.com/download/Tools/SynologyDriveClient/2.0.2-11078/Ubuntu/Installer/x86_64/synology-drive-client-11078.x86_64.deb
+
+  sudo apt -y install ${DOWNLOADS}synology-drive-client-11078.x86_64.deb
+}
+
 ########
 # MAIN #
 ########
@@ -79,10 +87,10 @@ function pkgRemoves {
 
 
 ## Enabling the NON-Free repository and installing latest updates
-sh ./pkgUpdates.sh
+pkgUpdates
 
 ## Installing Extra Packages
-sh ./pkgInstalls.sh
+pkgInstalls
 
 ## Setup Git
 sh ./setupGit.sh
@@ -91,13 +99,13 @@ sh ./setupGit.sh
 sh ./getGitConfigFiles.sh
 
 ## Installing GNOME Extensions
-sh ./pkgExtInstalls.sh
+pkgExtInstalls
 
 ## Installing the Synology Drive Client
-sh ./pkgSynologyDrive.sh
+pkgSynologyDrive
 
 ## Removing unnecessary packages
-sh ./pkgRemoves.sh
+pkgRemoves
 
 ## Getting themes
 sh ./getThemes.sh
