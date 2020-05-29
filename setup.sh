@@ -23,6 +23,31 @@ function pkgUpdates {
   sudo apt -y upgrade
 }
 
+function pkgInstalls {
+  sudo apt -y install chromium \
+	  curl \
+	  gimp \
+	  git \ 
+	  gnome-gmail
+	  gnome-tweaks \
+	  gnucash \
+	  libaio1 \
+	  neofetch htop \
+	  nmon \
+	  numlockx \
+	  powertop \
+	  rsync \
+	  solaar \
+	  tlp \
+	  tlp-rdw \
+	  vim \
+	  vlc \
+	  wget \
+	  zsh 
+}
+
+
+
 ########
 # MAIN #
 ########
