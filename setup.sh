@@ -4,12 +4,13 @@
 # VARIABLES #
 #############
 
-DOWNLOADS=~/Downloads
-PROJDIR=~/projects
-WORKDIR=${PROJDIR}/config
-BGDIR=~/.backgrounds
-ICONDIR=~/.icons
-THEMEDIR=~/.themes
+DOWNLOADS="~/Downloads"
+PROJDIR="~/projects"
+WORKDIR="${PROJDIR}/config"
+BGDIR="~/.backgrounds"
+ICONDIR="~/.icons"
+THEMEDIR="~/.themes"
+PROJECT="config"
 
 #############
 # FUNCTIONS #
@@ -94,6 +95,11 @@ function setupGit {
   git config --global difftool.prompt false
 
   git config --global --list
+}
+
+function getGitConfigFIles {
+  cd ${PROJDIR}
+  git clone https://github.com/sdlinden/${PROJECT}.git
 }
 
 ########
