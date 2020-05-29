@@ -1,5 +1,38 @@
 #!/bin/bash
 
+#############
+# VARIABLES #
+#############
+
+PROJDIR=~/projects
+WORKDIR=${PROJDIR}/config
+BGDIR=~/.backgrounds
+ICONDIR=~/.icons
+THEMEDIR=~/.themes
+
+#############
+# FUNCTIONS #
+#############
+
+function addRepos {
+  sudo apt-add-repository non-free
+ }
+
+function pkgUpdates {
+  sudo apt update
+  sudo apt -y upgrade
+}
+
+########
+# MAIN #
+########
+
+[ ! -d ${WORKDIR} ] && mkdir -p ${WORKDIR}
+[ ! -d ${BGDIR} ] && mkdir -p ${BGDIR}
+[ ! -d ${ICONDIR} ] && mkdir -p ${ICONDIR}
+[ ! -d ${THEMEDIR} ] && mkdir -p ${THEMEDIR}
+
+
 ## Enabling the NON-Free repository and installing latest updates
 sh ./pkgUpdates.sh
 
@@ -32,4 +65,5 @@ sh ./setupDesktop.sh
 
 ## Setup Terminal
 sh ./setupTerminal.sh
+
 
