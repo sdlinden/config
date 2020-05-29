@@ -204,6 +204,23 @@ function setupDesktop {
   gsettings set org.gnome.desktop.interface cursor-theme 'Yaru-Grey'
 }
 
+function setupTerminal {
+  cd ${PROJDIR}
+  git clone https://github.com/powerline/fonts.git
+  cd ${PROJDIR}/fonts
+  ./install.sh
+
+  ## Importing GNOME-Terminal profile
+  dconf load /org/gnome/terminal/legacy/profiles:/ < ${WORKDIR}/gnome-terminal-profiles.dconf
+
+  ## Download and setup zsh and oh-my-zsh
+  cd ${PROJDIR}
+  git clone https://github.com/ohmyzsh/ohmyzsh.git
+  cd ${PROJDIR}/ohmyzsh/tools
+  echo "Y" | ./install.sh
+  chsh -s "`which zsh`"
+
+  cp ${WORKDIR}/.zshrc ~/
 
 ########
 # MAIN #
@@ -246,6 +263,6 @@ setupGnomeExt
 setupDesktop
 
 ## Setup Terminal
-sh ./setupTerminal.sh
+setupTerminal
 
 
