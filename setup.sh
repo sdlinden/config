@@ -101,6 +101,7 @@ getThemes () {
   cp -rp Themes/* ${THEMEDIR}
 
   ## Install Cloudy-Light-Grey theme
+  ## You can get the theme at https://www.pling.com/s/Gnome/p/1297726/
   cd ${THEMEDIR}
   tar xvf ${WORKDIR}/Cloudy-Light-Grey.tar.xz
 }
@@ -183,6 +184,8 @@ setupDesktop () {
 
   gsettings set org.gnome.desktop.wm.preferences button-layout 'appmenu:minimize,maximize,close'
   gsettings set org.gnome.desktop.wm.preferences theme 'Adwaita'
+
+  gsettings set org.gnome.shell favorite-apps "['org.gnome.Screenshot.desktop', 'chromium.desktop', 'gnome-gmail.desktop', rhythmbox.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop', 'org.gnome.Terminal.desktop', 'org.gnome.tweaks.desktop', 'org.remmina.Remmina.desktop', 'gnome-control-center.desktop']"
 
   #gsettings set org.gnome.GWeather default-location '','KLRJ',nothing
   #gsettings set org.gnome.GWeather pressure-unit 'inch-hg'
