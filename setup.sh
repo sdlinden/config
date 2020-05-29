@@ -108,11 +108,8 @@ getThemes () {
 }
 
 setupGnomeExt () {
-  set -x
-  sleep 2
   # Desktop Icons
   gnome-shell-extension-tool -e desktop-icons@csoriano
-  set +x
 
   # Caffeine
   gnome-shell-extension-tool -e caffeine@patapon.info
@@ -259,3 +256,6 @@ setupDesktop
 
 ## Setup Terminal
 setupTerminal
+
+## Try again.
+gnome-shell-extension-tool -e desktop-icons@csoriano
