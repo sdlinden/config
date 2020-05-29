@@ -57,7 +57,7 @@ pkgUpdates () {
 }
 
 pkgInstalls () {
-  sudo apt -y install chromium curl gimp git gnome-gmail gnome-tweaks gnucash libaio1 neofetch htop nmon numlockx powertop remmina rsync solaar tlp tlp-rdw vim vlc wget zsh 
+  sudo apt -y install chromium curl gimp git gnome-gmail gnome-tweaks gnucash libaio1 neofetch htop nmon numlockx powertop remmina rsync smartmontools solaar tlp tlp-rdw vim vlc wget zsh 
 }
 
 pkgExtInstalls () {
