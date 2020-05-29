@@ -76,6 +76,26 @@ function pkgSynologyDrive {
   sudo apt -y install ${DOWNLOADS}synology-drive-client-11078.x86_64.deb
 }
 
+function setupGit {
+  cd ${DOWNLOADS}
+  wget https://cdist2.perforce.com/perforce/r20.1/bin.linux26x86_64/p4v.tgz
+  tar xvzf p4v.tgz
+  sudo rsync -av p4v-*/. /usr/local/
+
+  git config --global user.name "Scott Linden"
+  git config --global user.email "sdlinden@gmail.com"
+  git config --global core.editor "/usr/bin/vim"
+
+  git config --global merge.tool p4merge
+  git config --global mergetool.p4merge.path "/usr/local/bin/p4merge" 
+  git config --global mergetool.prompt false
+  git config --global diff.tool p4merge
+  git config --global difftool.p4merge.path "/usr/local/bin/p4merge"
+  git config --global difftool.prompt false
+
+  git config --global --list
+}
+
 ########
 # MAIN #
 ########
@@ -93,7 +113,7 @@ pkgUpdates
 pkgInstalls
 
 ## Setup Git
-sh ./setupGit.sh
+setupGit
 
 ## Getting the configuration files from github.com
 sh ./getGitConfigFiles.sh
