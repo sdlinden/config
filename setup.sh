@@ -13,13 +13,13 @@
 #
 # Install via wget
 # ================
-# $ bash -c "$(wget --no-check-certificate https://raw.githubusercontent.com/sdlinden/config/master/setup.sh -O -)"
+# $ sh -c "$(wget --no-check-certificate https://raw.githubusercontent.com/sdlinden/config/master/setup.sh -O -)"
 #
 #
 # Install via curl
 # ================
 #
-# $ bash -c "$(curl -fsSkL https://raw.githubusercontent.com/sdlinden/config/master/setup.sh)"
+# $ sh -c "$(curl -fsSkL https://raw.githubusercontent.com/sdlinden/config/master/setup.sh)"
 #
 #
 # These commands bypass the certificate error.  You should inspect any
@@ -125,7 +125,7 @@ setupGit () {
 }
 
 getGitConfigFiles () {
-  if [[ ! -d ${WORKDIR} ]]
+  if [ ! -d ${WORKDIR} ]
   then
     cd ${PROJDIR}
     git clone https://github.com/sdlinden/${PROJECT}.git
