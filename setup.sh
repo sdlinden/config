@@ -8,9 +8,12 @@ PATH=/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/bin:/usr/local/sbin
 DOWNLOADS="~/Downloads"
 PROJDIR="~/projects"
 WORKDIR="${PROJDIR}/config"
-BGDIR="~/.backgrounds"
-ICONDIR="~/.icons"
-THEMEDIR="~/.themes"
+#BGDIR="~/.backgrounds"
+#ICONDIR="~/.icons"
+#THEMEDIR="~/.themes"
+BGDIR="/usr/share/backgrounds"
+ICONDIR="/usr/share/icons"
+THEMEDIR="/usr/share/themes"
 PROJECT="config"
 
 #############
@@ -109,13 +112,13 @@ getThemes () {
   git clone https://github.com/Jannomag/Yaru-Colors.git
 
   cd ${PROJDIR}/Yaru-Colors
-  cp -rp Wallpapers/* ${BGDIR}
-  cp -rp Icons/* ${ICONDIR}/
-  cp -rp Themes/* ${THEMEDIR}
+  sudo cp -rp Wallpapers/* ${BGDIR}
+  sudo cp -rp Icons/* ${ICONDIR}/
+  sudo cp -rp Themes/* ${THEMEDIR}
 
   ## Install Cloudy-Light-Grey theme
   cd ${THEMDIR}
-  tar xvf ${WORKDIR}/Cloudy-Light-Grey.tar.xz
+  sudo tar xvf ${WORKDIR}/Cloudy-Light-Grey.tar.xz
 }
 
 setupGnomeExt () {
@@ -229,9 +232,9 @@ setupTerminal () {
 ########
 
 [[ ! -d ${WORKDIR} ]] && mkdir -p ${WORKDIR}
-[[ ! -d ${BGDIR} ]] && mkdir -p ${BGDIR}
-[[ ! -d ${ICONDIR} ]] && mkdir -p ${ICONDIR}
-[[ ! -d ${THEMEDIR} ]] && mkdir -p ${THEMEDIR}
+#[[ ! -d ${BGDIR} ]] && mkdir -p ${BGDIR}
+#[[ ! -d ${ICONDIR} ]] && mkdir -p ${ICONDIR}
+#[[ ! -d ${THEMEDIR} ]] && mkdir -p ${THEMEDIR}
 
 
 ## Enabling the NON-Free repository and installing latest updates
@@ -268,5 +271,3 @@ setupDesktop
 
 ## Setup Terminal
 setupTerminal
-
-
