@@ -4,6 +4,7 @@
 # VARIABLES #
 #############
 
+PATH=/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/bin:/usr/local/sbin
 DOWNLOADS="~/Downloads"
 PROJDIR="~/projects"
 WORKDIR="${PROJDIR}/config"
@@ -227,10 +228,10 @@ setupTerminal () {
 # MAIN #
 ########
 
-[ ! -d ${WORKDIR} ] && mkdir -p ${WORKDIR}
-[ ! -d ${BGDIR} ] && mkdir -p ${BGDIR}
-[ ! -d ${ICONDIR} ] && mkdir -p ${ICONDIR}
-[ ! -d ${THEMEDIR} ] && mkdir -p ${THEMEDIR}
+[[ ! -d ${WORKDIR} ]] && mkdir -p ${WORKDIR}
+[[ ! -d ${BGDIR} ]] && mkdir -p ${BGDIR}
+[[ ! -d ${ICONDIR} ]] && mkdir -p ${ICONDIR}
+[[ ! -d ${THEMEDIR} ]] && mkdir -p ${THEMEDIR}
 
 
 ## Enabling the NON-Free repository and installing latest updates
