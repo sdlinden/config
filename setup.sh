@@ -17,7 +17,7 @@
 # Install via curl
 # ================
 #
-# $ sh -c $(curl -kL https://raw.githubusercontent.com/sdlinden/config/master/setup.sh)"
+# $ sh -c "$(curl -kL https://raw.githubusercontent.com/sdlinden/config/master/setup.sh)"
 #
 #
 # These commands bypass the certificate error.  You should inspect any
