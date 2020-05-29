@@ -125,9 +125,11 @@ setupGnomeExt () {
   gsettings set org.gnome.shell.extensions.dash-to-dock show-apps-at-top 'true'
   gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode 'FIXED'
 
-
+  sleep 2
+  set -x
   # Desktop Icons
   gnome-shell-extension-tool -e desktop-icons@csoriano
+  set +x
 
   # Drive Menu
   gnome-shell-extension-tool -e drive-menu@gnome-shell-extensions.gcampax.github.com
