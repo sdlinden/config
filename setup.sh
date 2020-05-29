@@ -248,14 +248,11 @@ pkgRemoves
 ## Getting themes
 getThemes
 
-## Setup the GNOME Extensions
-setupGnomeExt
-
 ## Setup desktop
 setupDesktop
 
 ## Setup Terminal
 setupTerminal
 
-## Try again.
-gnome-shell-extension-tool -e desktop-icons@csoriano
+## Setup the GNOME Extensions
+setupGnomeExt
