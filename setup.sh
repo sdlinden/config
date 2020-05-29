@@ -16,16 +16,16 @@ PROJECT="config"
 # FUNCTIONS #
 #############
 
-function addRepos {
+addRepos () {
   sudo apt-add-repository non-free
 }
 
-function pkgUpdates {
+pkgUpdates () {
   sudo apt update
   sudo apt -y upgrade
 }
 
-function pkgInstalls {
+pkgInstalls () {
   sudo apt -y install chromium \
 	  curl \
 	  gimp \
@@ -48,7 +48,7 @@ function pkgInstalls {
 	  zsh 
 }
 
-function pkgExtInstalls {
+pkgExtInstalls () {
   sudo apt -y install chrome-gnome-shell \
 	  gnome-shell-extension-caffeine \
 	  gnome-shell-extension-dashtodock \
@@ -59,7 +59,7 @@ function pkgExtInstalls {
 	  gnome-shell-extension-weather
 }
 
-function pkgRemoves {
+pkgRemoves () {
   sudo apt -y remove evolution \
 	  mlterm \
 	  mlterm-common \
@@ -70,14 +70,14 @@ function pkgRemoves {
   sudo apt -y autoremove
 }
 
-function pkgSynologyDrive {
+pkgSynologyDrive () {
   cd ${DOWNLOADS}
   wget https://global.download.synology.com/download/Tools/SynologyDriveClient/2.0.2-11078/Ubuntu/Installer/x86_64/synology-drive-client-11078.x86_64.deb
 
   sudo apt -y install ${DOWNLOADS}synology-drive-client-11078.x86_64.deb
 }
 
-function setupGit {
+setupGit () {
   cd ${DOWNLOADS}
   wget https://cdist2.perforce.com/perforce/r20.1/bin.linux26x86_64/p4v.tgz
   tar xvzf p4v.tgz
@@ -97,12 +97,12 @@ function setupGit {
   git config --global --list
 }
 
-function getGitConfigFIles {
+getGitConfigFIles () {
   cd ${PROJDIR}
   git clone https://github.com/sdlinden/${PROJECT}.git
 }
 
-function getThemes {
+getThemes () {
   ## Install the Yaru-Colors theme
   cd ${PROJDIR}
   git clone https://github.com/Jannomag/Yaru-Colors.git
@@ -117,7 +117,7 @@ function getThemes {
   tar xvf ${WORKDIR}/Cloudy-Light-Grey.tar.xz
 }
 
-function setupGnomeExt {
+setupGnomeExt () {
   # Caffeine
   gnome-shell-extension-tool -e caffeine@patapon.info
 
@@ -171,7 +171,7 @@ function setupGnomeExt {
   gsettings set org.gnome.shell.extensions.user-theme name 'Yaru-Grey-dark'
 }
 
-function setupDesktop {
+setupDesktop () {
   ## Setting the desktop background
   sudo cp ${PROJDIR}/WaterDropsOnGrey.jpeg ${BGDIR}
 
@@ -204,7 +204,7 @@ function setupDesktop {
   gsettings set org.gnome.desktop.interface cursor-theme 'Yaru-Grey'
 }
 
-function setupTerminal {
+setupTerminal () {
   cd ${PROJDIR}
   git clone https://github.com/powerline/fonts.git
   cd ${PROJDIR}/fonts
