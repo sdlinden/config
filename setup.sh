@@ -63,20 +63,29 @@ pkgInstalls () {
   sudo apt -y install curl gimp git gnome-gmail gnome-tweaks gnucash libaio1 neofetch htop nmon numlockx powertop remmina rsync smartmontools solaar tlp tlp-rdw vim vlc wget zsh 
 
   case ${DISTID} in
+    Debian) sudo apt -y install chromium ;;
     Ubuntu) sudo apt -y install chromium-browser ;;
-         *) sudo apt -y install chromium ;;
   esac
 }
 
 pkgExtInstalls () {
-  sudo apt -y install chrome-gnome-shell \
-	  gnome-shell-extension-caffeine \
-	  gnome-shell-extension-dashtodock \
-	  gnome-shell-extension-desktop-icons \
-	  gnome-shell-extension-mediaplayer \
-	  gnome-shell-extension-show-ip \
-	  gnome-shell-extension-top-icons-plus \
-	  gnome-shell-extension-weather
+  case ${DISTID} in
+    Debian) sudo apt -y install chrome-gnome-shell \
+          	  gnome-shell-extension-caffeine \
+	          gnome-shell-extension-dashtodock \
+          	  gnome-shell-extension-desktop-icons \
+          	  gnome-shell-extension-mediaplayer \
+          	  gnome-shell-extension-show-ip \
+          	  gnome-shell-extension-top-icons-plus \
+          	  gnome-shell-extension-weather ;;
+    Ubuntu) sudo apt -y install chrome-gnome-shell
+          	  gnome-shell-extension-caffeine \
+          	  gnome-shell-extension-desktop-icons \
+          	  gnome-shell-extension-show-ip \
+          	  gnome-shell-extension-top-icons-plus \
+          	  gnome-shell-extension-weather ;;
+  esac
+
 }
 
 pkgRemoves () {
@@ -159,7 +168,7 @@ setupGnomeExt () {
   gnome-shell-extension-tool -e caffeine@patapon.info
 
   # Dash To Dock
-  gnome-shell-extension-tool -e dash-to-dock@micxgx.gmail.com
+  [ "${DISTID}" = "Debian" ] && gnome-shell-extension-tool -e dash-to-dock@micxgx.gmail.com
   gsettings set org.gnome.shell.extensions.dash-to-dock autohide 'false'
   gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity '.35'
   gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-running-dots-color '#9C9C9C'
@@ -168,6 +177,7 @@ setupGnomeExt () {
   gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size '24'
   gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed 'true'
   gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'BOTTOM'
+  gsettings set org.gnome.shell.extensions.dash-to-dock extend-height 'false'
   gsettings set org.gnome.shell.extensions.dash-to-dock intellihide 'false'
   gsettings set org.gnome.shell.extensions.dash-to-dock show-apps-at-top 'true'
   gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode 'FIXED'
@@ -230,7 +240,10 @@ setupDesktop () {
   gsettings set org.gnome.desktop.wm.preferences button-layout 'appmenu:minimize,maximize,close'
   gsettings set org.gnome.desktop.wm.preferences theme 'Adwaita'
 
-  gsettings set org.gnome.shell favorite-apps "['org.gnome.Screenshot.desktop', 'chromium.desktop', 'gnome-gmail.desktop', 'org.gnome.Terminal.desktop', 'org.remmina.Remmina.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop']"
+  case ${DISTID} in
+    Debian) gsettings set org.gnome.shell favorite-apps "['org.gnome.Screenshot.desktop', 'chromium.desktop', 'gnome-gmail.desktop', 'org.gnome.Terminal.desktop', 'org.remmina.Remmina.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop']" ;;
+    Ubuntu) gsettings set org.gnome.shell favorite-apps "['org.gnome.Screenshot.desktop', 'chromium-browser.desktop', 'gnome-gmail.desktop', 'org.gnome.Terminal.desktop', 'org.remmina.Remmina.desktop', 'org.gnome.Nautilus.desktop', 'snap-handle-link.desktop']" ;;
+  esac
 
   #gsettings set org.gnome.GWeather default-location '','KLRJ',nothing
   #gsettings set org.gnome.GWeather pressure-unit 'inch-hg'
