@@ -63,8 +63,8 @@ pkgInstalls () {
   sudo apt -y install curl gimp git gnome-gmail gnome-tweaks gnucash libaio1 neofetch htop nmon numlockx powertop remmina rsync smartmontools solaar tlp tlp-rdw vim vlc wget zsh 
 
   case ${DISTID} in
-    Debian) sudo apt -y install chromium ;;
     Ubuntu) sudo apt -y install chromium-browser ;;
+         *) sudo apt -y install chromium ;;
   esac
 }
 
