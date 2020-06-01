@@ -214,7 +214,6 @@ setupGnomeExt () {
 
   #User Shell Theme
   gnome-shell-extension-tool -e user-theme@gnome-shell-extensions.gcampax.github.com
-  gsettings set org.gnome.shell.extensions.user-theme name 'Yaru-Grey-dark'
 }
 
 setupDesktop () {
@@ -242,7 +241,7 @@ setupDesktop () {
 
   case ${DISTID} in
     Debian) gsettings set org.gnome.shell favorite-apps "['org.gnome.Screenshot.desktop', 'chromium.desktop', 'gnome-gmail.desktop', 'org.gnome.Terminal.desktop', 'org.remmina.Remmina.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop']" ;;
-    Ubuntu) gsettings set org.gnome.shell favorite-apps "['org.gnome.Screenshot.desktop', 'chromium-browser.desktop', 'gnome-gmail.desktop', 'org.gnome.Terminal.desktop', 'org.remmina.Remmina.desktop', 'org.gnome.Nautilus.desktop', 'snap-handle-link.desktop']" ;;
+    Ubuntu) gsettings set org.gnome.shell favorite-apps "['org.gnome.Screenshot.desktop', 'chromium-browser.desktop', 'gnome-gmail.desktop', 'org.gnome.Terminal.desktop', 'org.remmina.Remmina.desktop', 'org.gnome.Nautilus.desktop', 'snap-store_ubuntu-software.desktop']" ;;
   esac
 
   #gsettings set org.gnome.GWeather default-location '','KLRJ',nothing
@@ -253,6 +252,7 @@ setupDesktop () {
   gsettings set org.gnome.desktop.interface gtk-theme "Cloudy-Light-Grey"
   gsettings set org.gnome.desktop.interface icon-theme 'Yaru-Grey'
   gsettings set org.gnome.desktop.interface cursor-theme 'Yaru-Grey'
+  gsettings set org.gnome.shell.extensions.user-theme name 'Yaru-Grey-dark'
 }
 
 setupTerminal () {
