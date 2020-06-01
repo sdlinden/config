@@ -43,6 +43,8 @@ THEMEDIR="${HOME}/.themes"
 #ICONDIR="/usr/share/icons"
 #THEMEDIR="/usr/share/themes"
 
+DISTID=`lsb_release -is`
+
 #############
 # FUNCTIONS #
 #############
@@ -57,7 +59,13 @@ pkgUpdates () {
 }
 
 pkgInstalls () {
-  sudo apt -y install chromium curl gimp git gnome-gmail gnome-tweaks gnucash libaio1 neofetch htop nmon numlockx powertop remmina rsync smartmontools solaar tlp tlp-rdw vim vlc wget zsh 
+
+  sudo apt -y install curl gimp git gnome-gmail gnome-tweaks gnucash libaio1 neofetch htop nmon numlockx powertop remmina rsync smartmontools solaar tlp tlp-rdw vim vlc wget zsh 
+
+  case ${DISTID} in
+    Debian) sudo apt -y install chromium ;;
+    Ubuntu) sudo apt -y install chromium-browser ;;
+  esac
 }
 
 pkgExtInstalls () {
@@ -256,6 +264,11 @@ setupTerminal () {
 services () {
   numlockx on
   sudo tlp start
+}
+
+setDefaultApps () {
+  sudo update-alternatives --set x-www-browser /usr/bin/chromium
+  sudo update-alternatives --set gnome-www-browser /usr/bin/chromium
 }
 
 ########
